@@ -16,4 +16,7 @@ public class Converter {
 	public String convert(Object obj, Type type) {
 		return new Gson().toJson(obj, type);
 	}
+	public <T> T mapObject(String json, Class cls) {
+		return (T) new Gson().fromJson(json, cls);
+	}
 }
